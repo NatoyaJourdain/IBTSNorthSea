@@ -2,7 +2,6 @@
 library(IBTSindices)
 year =2018
 quarter = 1
-path = "Papers/manuscript/results/"
 species = "Gadus morhua";
 dat = readIBTSData(survey = "NS-IBTS", year = year, quarter = quarter,species = species)
 n=2 #Number bootstrap samples
@@ -52,7 +51,7 @@ for(quarter in quarters){
                                           lengthDivision = lengthDivision,
                                           samplesWithinEachIntervall = samplesWithinEachIntervall)
       #Save work
-      saveRDS(removeOtoliths, file = paste(path,"resamplingOtoliths/RemovalCodDl",dl,"year",year,"Q",quarter,"n", n,ALKprocedure,samplesWithinEachIntervall, sep= ""))
+      saveRDS(removeOtoliths, file = paste("results/resamplingOtoliths/RemovalCodDl",dl,"year",year,"Q",quarter,"n", n,ALKprocedure,samplesWithinEachIntervall, sep= ""))
     }
   }
 }
@@ -80,7 +79,7 @@ for(quarter in quarters){
                                           lengthDivision = lengthDivision,
                                           samplesWithinEachIntervall = samplesWithinEachIntervall)
       #Save work
-      saveRDS(removeOtoliths, file = paste(path,"resamplingOtoliths/RemovalCodDl",dl,"year",year,"Q",quarter,"n", n,ALKprocedure,samplesWithinEachIntervall, sep= ""))
+      saveRDS(removeOtoliths, file = paste("results/resamplingOtoliths/RemovalCodDl",dl,"year",year,"Q",quarter,"n", n,ALKprocedure,samplesWithinEachIntervall, sep= ""))
     }
   }
 }
@@ -109,7 +108,7 @@ for(quarter in quarters){
         mCPUEStratifiedHL = CPUEnorthSea(species = species, year = year, quarter = quarter,dat = dat,
                                          bootstrapProcedure = bootstrapProcedure, B = n, ALKprocedure = ALKprocedure,
                                          onlySimulate = TRUE,nSimHauls = N,samplesWithinEachIntervall = samplesWithinEachIntervall)
-        saveRDS(mCPUEStratifiedHL, file = paste(path,"resamplingNandotoliths/resampleCodDl",dl,"N",N,"year",year,"Q",quarter,"n", n,ALKprocedure,samplesWithinEachIntervall, sep= ""))
+        saveRDS(mCPUEStratifiedHL, file = paste("results/resamplingNandotoliths/resampleCodDl",dl,"N",N,"year",year,"Q",quarter,"n", n,ALKprocedure,samplesWithinEachIntervall, sep= ""))
       }
     }
   }
